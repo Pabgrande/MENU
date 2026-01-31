@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { ArrowLeft, Star, Trash2, Plus, Clock, Users } from 'lucide-react'
+import { ArrowLeft, Star, Trash2, Clock, Users } from 'lucide-react'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { db } from '../services/db'
 import Button from '../components/ui/Button'
 import Input from '../components/ui/Input'
-import Card from '../components/ui/Card'
-import Chip from '../components/ui/Chip'
 import type { Recipe, DishCategory, ProteinType, RecipeTag } from '../types'
 
 const CATEGORIES: DishCategory[] = [
@@ -107,7 +105,7 @@ export default function RecipeDetail() {
       if (isNew) {
         await db.recipes.add(recipeData)
       } else if (id) {
-        await db.recipes.update(Number(id), recipeData)
+        await db.recipes.put({ ...recipeData, id: Number(id) })
       }
 
       navigate('/recipes')

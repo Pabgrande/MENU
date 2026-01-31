@@ -12,7 +12,7 @@ import { SkeletonMealCard } from '../components/ui/Skeleton'
 import EmptyState from '../components/ui/EmptyState'
 import { useDateSwipe } from '../hooks/useSwipeGesture'
 import { toast } from '../stores/toast.store'
-import type { MealSlot, FamilyMember, DayNote } from '../types'
+import type { MealSlot } from '../types'
 
 export default function Today() {
   const navigate = useNavigate()
@@ -64,7 +64,7 @@ export default function Today() {
   const goToNextDay = useCallback(() => setCurrentDate(prev => addDays(prev, 1)), [])
   const goToToday = useCallback(() => setCurrentDate(new Date()), [])
 
-  const handleEditMeal = useCallback((meal: MealSlot) => {
+  const handleEditMeal = useCallback((_meal: MealSlot) => {
     navigate(`/day/${dateStr}`)
   }, [navigate, dateStr])
 
@@ -92,7 +92,7 @@ export default function Today() {
   const isLoading = meals === undefined
 
   return (
-    <div className="page-container" ref={swipeRef}>
+    <div className="page-container" ref={swipeRef as React.RefObject<HTMLDivElement>}>
       {/* Header */}
       <header className="page-header">
         <div className="flex items-center justify-between">

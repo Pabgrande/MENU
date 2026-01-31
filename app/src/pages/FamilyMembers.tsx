@@ -6,7 +6,7 @@ import { db } from '../services/db'
 import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
 import Input from '../components/ui/Input'
-import type { FamilyMember, Restriction } from '../types'
+import type { FamilyMember } from '../types'
 
 export default function FamilyMembers() {
   const navigate = useNavigate()

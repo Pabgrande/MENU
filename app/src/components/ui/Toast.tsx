@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { X, CheckCircle, AlertCircle, AlertTriangle, Info } from 'lucide-react'
 import { Toast as ToastType, useToastStore } from '../../stores/toast.store'
 import { clsx } from 'clsx'

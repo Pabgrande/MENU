@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Plus, Search, Star, Clock, ChefHat, X } from 'lucide-react'
+import { Plus, Search, Star, Clock, X } from 'lucide-react'
 import { useLiveQuery } from 'dexie-react-hooks'
 import { db } from '../services/db'
 import Card from '../components/ui/Card'

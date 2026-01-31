@@ -12,7 +12,7 @@ export default function ImportMenu() {
   const [month, setMonth] = useState(new Date().getMonth() + 1)
   const [year, setYear] = useState(new Date().getFullYear())
   const [schoolName, setSchoolName] = useState('')
-  const [processing, setProcessing] = useState(false)
+  const [, setProcessing] = useState(false)
 
   const handleImageCapture = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]

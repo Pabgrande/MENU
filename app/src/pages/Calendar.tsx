@@ -5,7 +5,6 @@ import {
   startOfMonth,
   endOfMonth,
   eachDayOfInterval,
-  isSameMonth,
   isSameDay,
   addMonths,
   subMonths,
@@ -149,8 +148,6 @@ export default function Calendar() {
             const isToday = isSameDay(date, new Date())
             const status = getDayStatus(date)
             const isSelected = selectedDates.includes(dateStr)
-            const dayOfWeek = getDay(date)
-            const isThursday = dayOfWeek === 4
             const dayMeals = mealsByDate[dateStr] || []
             const hasPizza = dayMeals.some(m => m.origin === 'fixed_rule')
 
